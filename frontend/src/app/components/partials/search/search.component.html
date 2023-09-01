@@ -1,0 +1,21 @@
+<div>
+
+  <input #s type="text" placeholder="Search Food Mine!"
+  (keyup.enter)="search(s.value)"
+  [value]="searchTerm"/>
+  <button (click) = "search(s.value)">Search</button>
+</div>
+
+
+
+  <!-- #s: This is a template reference variable that allows us to access the input
+  element in the template code. We can use #s
+  to refer to the input element in event bindings and expressions. -->
+
+ <!-- (keyup.enter)="search(s.value)": This is an event binding that listens for the "keyup" event
+ (when a key is released) and calls the search() method with
+ the value of the input field as an argument when the "Enter" key is pressed. -->
+
+ <!-- [value]="searchTerm": This binds the searchTerm property from the component class to the
+ value of the input field. It ensures that the input field displays the current value of
+ the searchTerm. -->
