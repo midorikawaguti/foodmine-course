@@ -20,11 +20,13 @@ export class CartService {
     return;
 
     this.cart.items.push(new CartItem(food));
+    this.setCartToLocalStorage();
   }
 
 
   removeFromCart(foodId: string): void{
     this.cart.items = this.cart.items.filter(item => item.food.id ! = foodId);
+    this.setCartToLocalStorage();
 
   }
 
@@ -40,6 +42,7 @@ export class CartService {
 
   clearCart(){
     this.cart = new Cart();
+    this.setCartToLocalStorage();
   }
 
 
